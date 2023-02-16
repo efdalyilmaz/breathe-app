@@ -45,7 +45,7 @@ import {
           <LinearGradient
             start={start}
             end={end}
-            colors={["#FFF723", "#E70696"]}
+            colors={["white","gray"]}
           />
         </Circle>
         <BackdropFilter filter={<Blur blur={10} />} clip={rect}>
