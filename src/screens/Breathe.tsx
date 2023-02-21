@@ -11,6 +11,10 @@ import {
     BackdropFilter,
     Blur,
     useComputedValue,
+    DisplacementMap,
+    Turbulence,
+    Offset,
+    BackdropBlur
   } from "@shopify/react-native-skia";
   import React, { useMemo } from "react";
   import { useWindowDimensions } from "react-native";
@@ -48,9 +52,11 @@ import {
             colors={["white","gray"]}
           />
         </Circle>
-        <BackdropFilter filter={<Blur blur={10} />} clip={rect}>
-          <Fill color="rgba(0, 0, 0, 0.3)" />
-        </BackdropFilter>
+        <BackdropFilter filter={<DisplacementMap channelX="a" channelY="r"  scale={50}>
+                <Turbulence freqX={0.01} freqY={0.05} octaves={4} />
+            </DisplacementMap>} clip={rect}>
+        
+        </BackdropFilter>  
       </Canvas>
     );
   };
