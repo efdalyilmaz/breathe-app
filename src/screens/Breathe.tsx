@@ -49,7 +49,7 @@ import {
           <LinearGradient
             start={start}
             end={end}
-            colors={["white","gray"]}
+            colors={["#FFF723","#E70696"]}
           />
         </Circle>
         <BackdropFilter filter={<DisplacementMap channelX="a" channelY="r"  scale={50}>
